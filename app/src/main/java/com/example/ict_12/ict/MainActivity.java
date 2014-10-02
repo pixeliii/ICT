@@ -1,9 +1,11 @@
 package com.example.ict_12.ict;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends Activity {
@@ -33,4 +35,28 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void onOpenLaseordningClick(View view) {
+
+        	        // We have to state that are intention is to open another Activity. We do so
+               // by passing a Context and the Activity that we want to open
+
+        	        Intent getOpenLaseordningIntent = new Intent(this, SecondScreen.class);
+
+        final int result = 1;
+
+        	        // To send data use putExtra with a String name followed by its value
+
+        	        getOpenLaseordningIntent.putExtra("callingActivity", "MainActivity");
+
+                startActivityForResult(getOpenLaseordningIntent, result);
+
+
+
+    }
+
+
+
+
 }
